@@ -1,0 +1,35 @@
+# Data Analysis
+pandas==2.0.1
+numpy==1.24.3
+
+# Visualization
+matplotlib==3.7.1
+seaborn==0.12.2
+plotly==5.15.0
+
+# Machine Learning
+scikit-learn==1.3.0
+xgboost==1.7.5
+
+# Deep Learning
+tensorflow==2.12.0
+keras==2.12.0
+torch==2.0.1
+
+# Web Scraping
+scrapy==2.10.1
+beautifulsoup4==4.12.2
+
+# Web Development
+Flask==2.3.2
+Django==4.2.1
+
+# API Requests
+requests==2.30.0
+
+# Miscellaneous
+jupyter==1.0.0  # For Jupyter notebooks
+
+# Web scraping additional tools
+scrapy-splash==0.8.0  
+selenium==4.10.0  
