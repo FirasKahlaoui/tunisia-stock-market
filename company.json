@@ -1,0 +1,20 @@
+{
+    "companies": {
+        "ticker_symbol": ["ADWYA","AETEC","AL",
+        "AB","AMI","AMS","ATB","ATL","ARTES",
+        "ASSAD","ASSMA","AST","TJL","BT","BNA",
+        "BL","BHASS","BH","BHL","BIAT","BTE",
+        "CC","CELL","CREAL","CIL","SCB","CITY",
+        "DH","ELBEN","LSTR","NAKL","SOKNA","ECYCL",
+        "GIF","HL","XABYT","ICF","LNDOR","MAG","AMV",
+        "SAM","MIP","MNP","MPBS","NBL","PLAST","OTH",
+        "PLTU","PGH","SAH","SMD","SERVI","SFBT","SIAME",
+        "SIMPA","SIPHA","SITS","SMART","ALKIM","SOMOC",
+        "SOPAT","SOTEM","SOTET","STPAP","STPIL","MGR",
+        "SOTUV","SPDIT","STA","STAR","STB","STEQ","STI¨P",
+        "SPHAX","TGH","TLNET","TPR","PX1","TINV","TRE",
+        "TAIR","TBIDX","TLS","TVAL","UADH","UBCI","UIB",
+        "UMED","WIFAK"
+    ]
+    }
+}
