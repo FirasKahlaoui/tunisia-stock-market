@@ -90,6 +90,5 @@
         {"name": "UIB", "ticker_symbol": "UIB"},
         {"name": "UNIMED", "ticker_symbol": "UMED"},
         {"name": "WIFAK INT BANK", "ticker_symbol": "WIFAK"}
-    ]
-    
+    ] 
 }
