@@ -22,7 +22,6 @@ def update_json_file(file_path):
                     if "d" in item:
                         item["d"] = days_to_date((current_date - datetime(1970, 1, 1)).days)
                         current_date += timedelta(weeks=1)
-                print(data)
                 f.seek(0)
                 json.dump(data, f, indent=4)
                 f.truncate()
