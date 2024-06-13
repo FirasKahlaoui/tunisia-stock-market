@@ -3,12 +3,10 @@ import json
 from datetime import datetime, timedelta
 
 def update_json_file(file_path):
-    # Function to convert days since epoch to date string
     def days_to_date(days):
         epoch = datetime(1970, 1, 1)
         return (epoch + timedelta(days=days)).strftime("%d/%m/%Y")
 
-    # Check if the file exists
     if not os.path.isfile(file_path):
         print(f"File not found: {file_path}")
         return
@@ -21,7 +19,7 @@ def update_json_file(file_path):
                 current_date = start_date
 
                 for item in data["QuoteTab"]:
-                    if "d" in item :
+                    if "d" in item:
                         item["d"] = days_to_date((current_date - datetime(1970, 1, 1)).days)
                         current_date += timedelta(weeks=1)
                 print(data)
@@ -30,4 +28,11 @@ def update_json_file(file_path):
                 f.truncate()
 
 def main():
-    update_json_file("stock_scraper/data/stock_data.json")
+    folder_path = 'stock_scraper\companies_data'
+    for file_name in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, file_name)
+        if file_path.endswith('.json'):
+            update_json_file(file_path)
+
+if __name__ == "__main__":
+    main()
