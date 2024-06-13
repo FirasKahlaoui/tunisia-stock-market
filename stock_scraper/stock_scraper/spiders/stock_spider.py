@@ -25,3 +25,4 @@ class StockSpider(scrapy.Spider):
             json.dump(data,json_file, indent=4)
 
         self.log(f"Data for {symbol} saved to {file_name}")
+
