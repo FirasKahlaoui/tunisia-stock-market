@@ -18,6 +18,7 @@ class StockScraperItem(scrapy.Item):
     volatility = scrapy.Field()
     capital_exchange = scrapy.Field()
     market_capitalization = scrapy.Field()
-    isin = scrapy.Field()
     ticker_symbol = scrapy.Field()
     pass
+
+
