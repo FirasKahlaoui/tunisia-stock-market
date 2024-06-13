@@ -1,8 +1,13 @@
 import scrapy
-from stock_scraper.items import StockScraperItem
 import json
 
-# Load the JSON file
-file_path = 'companies.json'
-with open(file_path, 'r') as file:
-    data = json.load(file)
+class StockSpider(scrapy.Spider):
+    name = 'stock_spider'
+    allowed_domains = ['ilboursa.com']
+
+    def start_requests(self):
+        with open('companies.json') as f :
+            companies = json.load(f)['companies']
+
+
+    
