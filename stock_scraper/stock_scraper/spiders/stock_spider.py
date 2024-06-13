@@ -1,9 +1,8 @@
 import scrapy
 import json
 import sys
-sys.path.append('C:/Users/Kahla/OneDrive/Documents/Tunisia_Stock_Market/stock_scraper/stock_scraper')
-
 from update_dates import update_json_file
+from join_data import join_json_data_to_csv  # Import the function
 
 class StockSpider(scrapy.Spider):
     name = 'stock_spider'
@@ -22,10 +21,10 @@ class StockSpider(scrapy.Spider):
         symbol = response.meta['symbol']
         data = json.loads(response.body)
 
-        # Save data to JSON file
-        file_name = f"{symbol}.json"
+        file_name = f"companies_data/{symbol}.json"
         with open(file_name, 'w') as json_file:
             json.dump(data, json_file, indent=4)
 
-        # Call update_json_file function to update the saved JSON file
         update_json_file(file_name)
+        
+    join_json_data_to_csv('companies_data', 'companies_data/output.csv')
