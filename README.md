@@ -53,3 +53,26 @@ To ensure you have all the necessary dependencies for the Tunisia Stock Market P
    ```bash
    pip install -r requirements.txt
    ```
+
+## Data Collection and Scraping Approach
+
+The data for the Tunisian stock market is visualized on the website through canvas graphs, which do not allow for direct scraping of the data from the webpage's HTML. To overcome this challenge, we adopted a more technical approach by inspecting the network traffic to identify the server requests that fetch the stock data.
+
+### Steps to Scrape Data from Canvas Graphs:
+
+1. **Inspect Network Traffic:**
+   - Open the website where the stock market data is displayed.
+   - Use the browser's Developer Tools (usually accessible by pressing `F12` or right-clicking and selecting "Inspect") to monitor the network traffic.
+   - Navigate to the "Network" tab and filter by XHR (XMLHttpRequest) to observe the API calls made by the webpage.
+
+2. **Identify Data Requests:**
+   - Look for requests that fetch the stock data. These requests are often made to an API endpoint and return data in JSON format.
+   - Analyze the request headers, method (GET or POST), and any query parameters or payloads used to retrieve the data.
+
+3. **Craft Custom Requests with Scrapy:**
+   - Using Scrapy, a popular web scraping framework in Python, create a spider to mimic the identified requests that fetch the stock data.
+   - Ensure to include any required headers, cookies, or parameters identified in the previous step. This can involve setting custom headers or cookies in your Scrapy spider to ensure the server accepts and processes your request as if it were coming from a legitimate user.
+
+4. **Parse and Save the Data:**
+   - Once the data is retrieved, parse the JSON response to extract the necessary information.
+   - Save the parsed data into a structured format like CSV or a database for further analysis or processing. This step is crucial for transforming the raw data into a usable format for data analysis, machine learning models, or any other intended use case.
