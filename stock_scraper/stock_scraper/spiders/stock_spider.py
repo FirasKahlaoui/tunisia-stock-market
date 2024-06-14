@@ -1,20 +1,26 @@
-import scrapy
 import json
+import os
+import shutil
+import sys
+
+import scrapy
 from scrapy import signals
 from scrapy.signalmanager import dispatcher
 
-import sys
-import os
-import shutil
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
+from utils.update_dates import update_json_file
+from utils.join_data import join_json_data_to_csv
+
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 
-from utils.update_dates import update_json_file
-from utils.join_data import join_json_data_to_csv
 
 class StockSpider(scrapy.Spider):
+
     name = 'stock_spider'
     allowed_domains = ['ilboursa.com']
 
@@ -42,10 +48,9 @@ class StockSpider(scrapy.Spider):
 
     def spider_closed(self, spider):
         join_json_data_to_csv('companies_data', 'companies_data/output.csv')
-        destination_path = os.path.join('notebooks/data', 'weekly_stock_market2.csv')
+        destination_path = os.path.join(
+            '../../..', 'notebooks/data', 'weekly_stock_market.csv')
 
-        os.makedirs('notebooks/data', exist_ok=True)
+        os.makedirs('../../notebooks/data', exist_ok=True)
 
         shutil.copy2('companies_data/output.csv', destination_path)
-        print(f"Output file copied to {destination_path}")
-        
