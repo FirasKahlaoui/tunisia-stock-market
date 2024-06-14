@@ -58,7 +58,7 @@ To ensure you have all the necessary dependencies for the Tunisia Stock Market P
 
 The data for the Tunisian stock market is visualized on the website through canvas graphs, which do not allow for direct scraping of the data from the webpage's HTML. To overcome this challenge, we adopted a more technical approach by inspecting the network traffic to identify the server requests that fetch the stock data.
 
-### Steps to Scrape Data from Canvas Graphs:
+### Steps to Scrape Data from Canvas Graphs
 
 1. **Inspect Network Traffic:**
    - Open the website where the stock market data is displayed.
