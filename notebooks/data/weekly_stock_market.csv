@@ -1,4 +1,4 @@
-companyName,date,openingPrice,highestPrice,lowerPrice,closingPrice,volume
+companyName,date,openingPrice,highestPrice,lowestPrice,closingPrice,volume
 SOTUMAG,16/06/2014,1.76,1.8,1.73,1.73,44315
 SOTUMAG,23/06/2014,1.78,1.82,1.77,1.82,9551
 SOTUMAG,30/06/2014,1.81,1.82,1.81,1.81,2401
