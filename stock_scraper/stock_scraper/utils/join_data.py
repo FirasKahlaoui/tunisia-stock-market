@@ -25,6 +25,6 @@ def join_json_data_to_csv(directory, csv_filename):
 
     with open(csv_filename, 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile)
-        header = ['companyName', 'date', 'openingPrice', 'highestPrice', 'lowerPrice', 'closingPrice', 'volume']
+        header = ['companyName', 'date', 'openingPrice', 'highestPrice', 'lowestPrice', 'closingPrice', 'volume']
         csvwriter.writerow(header)
         csvwriter.writerows(data_rows)

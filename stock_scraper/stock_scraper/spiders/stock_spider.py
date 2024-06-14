@@ -5,6 +5,7 @@ from scrapy.signalmanager import dispatcher
 
 import sys
 import os
+import shutil
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
@@ -41,3 +42,10 @@ class StockSpider(scrapy.Spider):
 
     def spider_closed(self, spider):
         join_json_data_to_csv('companies_data', 'companies_data/output.csv')
+        destination_path = os.path.join('notebooks/data', 'weekly_stock_market2.csv')
+
+        os.makedirs('notebooks/data', exist_ok=True)
+
+        shutil.copy2('companies_data/output.csv', destination_path)
+        print(f"Output file copied to {destination_path}")
+        
