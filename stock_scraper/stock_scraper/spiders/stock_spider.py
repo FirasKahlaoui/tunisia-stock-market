@@ -1,5 +1,3 @@
-from utils.join_data import join_json_data_to_csv
-from utils.update_dates import update_json_file
 import json
 import os
 import shutil
@@ -13,11 +11,8 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 
-
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(current_dir)
-sys.path.append(parent_dir)
-
+from utils.join_data import join_json_data_to_csv
+from utils.update_dates import update_json_file
 
 class StockSpider(scrapy.Spider):
 
