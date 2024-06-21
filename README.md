@@ -76,3 +76,9 @@ The data for the Tunisian stock market is visualized on the website through canv
 4. **Parse and Save the Data:**
    - Once the data is retrieved, parse the JSON response to extract the necessary information.
    - Save the parsed data into a structured format like CSV or a database for further analysis or processing. This step is crucial for transforming the raw data into a usable format for data analysis, machine learning models, or any other intended use case.
+
+- `Modeling.ipynb`: Notebook for building and evaluating machine learning models.
+- `Exploratory_Data_Analysis.ipynb`: Notebook for performing exploratory data analysis on the stock market data.
+- `Feature_Engineering.ipynb`: Notebook for feature selection and engineering to prepare data for modeling.
+- `requirements.txt`: Contains all the necessary Python packages to run the project.
+- `stock_scraper/stock_scraper/spiders/stock_spider.py`: Python script for scraping stock market data from the web.
