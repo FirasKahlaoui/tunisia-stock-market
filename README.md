@@ -77,8 +77,35 @@ The data for the Tunisian stock market is visualized on the website through canv
    - Once the data is retrieved, parse the JSON response to extract the necessary information.
    - Save the parsed data into a structured format like CSV or a database for further analysis or processing. This step is crucial for transforming the raw data into a usable format for data analysis, machine learning models, or any other intended use case.
 
-- `Modeling.ipynb`: Notebook for building and evaluating machine learning models.
-- `Exploratory_Data_Analysis.ipynb`: Notebook for performing exploratory data analysis on the stock market data.
-- `Feature_Engineering.ipynb`: Notebook for feature selection and engineering to prepare data for modeling.
-- `requirements.txt`: Contains all the necessary Python packages to run the project.
-- `stock_scraper/stock_scraper/spiders/stock_spider.py`: Python script for scraping stock market data from the web.
+## Feature Engineering
+
+Feature engineering is crucial in preparing raw data for machine learning models by creating meaningful input features. For the analysis of weekly Tunisian stock market data, the following steps were implemented:
+
+### Date Extraction
+
+- Converted the date column to datetime format to facilitate extraction of temporal features.
+- Extracted features such as year, month, day_of_month, and week_of_year to capture seasonal and time-related patterns.
+
+### Price Features
+
+- Calculated `price_range` as the difference between `highestPrice` and `lowestPrice` to capture weekly price volatility.
+- Derived `price_change` as the difference between `closingPrice` and `openingPrice` to gauge weekly price movement.
+- Computed `weekly_return` as the percentage change from `openingPrice` to `closingPrice`, normalized to account for weekly fluctuations.
+
+### Volume Transformation
+
+- Applied a logarithmic transformation (`log_volume`) to the volume column to normalize the distribution and reduce skewness, making the volume data more suitable for modeling.
+
+### Moving Averages and Volatility
+
+- Calculated `moving_avg_4` as the 4-week rolling average of `closingPrice` to smooth out short-term fluctuations and identify long-term trends.
+- Utilized exponential moving average (`ema_4`) to give more weight to recent prices while computing the average, reflecting recent market sentiment.
+- Determined `volatility_4` as the 4-week rolling standard deviation of `closingPrice` to quantify the weekly price fluctuation or risk.
+
+### Data Handling
+
+- Handled missing values in rolling statistics by filling NaN values appropriately, ensuring continuity in feature calculations.
+
+These engineered features are designed to enhance the predictive capability of machine learning models by providing meaningful insights into the dynamics of weekly stock market behavior. The processed dataset, containing these engineered features alongside the target variable (`closingPrice`), is then used for training and evaluating predictive models in subsequent steps.
+
+By performing robust feature engineering, the aim is to improve model accuracy and effectiveness in forecasting stock prices based on historical data patterns.
