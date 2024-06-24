@@ -1,0 +1,23 @@
+.stock-prediction {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: left;
+  }
+  
+  .stock-prediction h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .stock-prediction p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+  }
+  

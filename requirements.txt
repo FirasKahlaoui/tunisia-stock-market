@@ -23,6 +23,7 @@ beautifulsoup4==4.12.2
 # Web Development
 Flask==2.3.2
 Django==4.2.1
+Flask-Cors==3.0.10  # Added Flask-Cors
 
 # API Requests
 requests==2.30.0
@@ -32,4 +33,7 @@ jupyter==1.0.0  # For Jupyter notebooks
 
 # Web scraping additional tools
 scrapy-splash==0.8.0  
-selenium==4.10.0  
+selenium==4.10.0
+
+# Added pickle5 for enhanced pickling support
+pickle5==0.0.11
