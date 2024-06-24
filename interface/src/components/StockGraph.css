@@ -1,0 +1,16 @@
+.stock-graph {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .stock-graph h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
