@@ -7,9 +7,9 @@ app = Flask(__name__)
 CORS(app)
 
 # Load your trained model
-model = pickle.load(open('backend/stock_model.pkl', 'rb'))
-scaler_features = pickle.load(open('backend/scaler.pkl', 'rb'))
-target_scaler = pickle.load(open('backend/target_scaler.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
+scaler_features = pickle.load(open('scaler.pkl', 'rb'))
+target_scaler = pickle.load(open('target_scaler.pkl', 'rb'))
 
 
 @app.route('/predict', methods=['POST'])
