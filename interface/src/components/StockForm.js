@@ -16,15 +16,16 @@ function StockForm({ onPredict }) {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:5000/predict', formData);
-      onPredict(response.data);
-    } catch (error) {
-      console.error('Error predicting stock price:', error);
-    }
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  console.log('Form data on submit:', formData);
+  try {
+    const response = await axios.post('http://localhost:5000/predict', formData);
+    onPredict(response.data);
+  } catch (error) {
+    console.error('Error predicting stock price:', error);
+  }
+};
 
   return (
     <form onSubmit={handleSubmit}>
