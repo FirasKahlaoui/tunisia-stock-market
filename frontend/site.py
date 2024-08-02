@@ -10,7 +10,7 @@ lowest_price = st.number_input('Lowest Price')
 volume = st.number_input('Volume')
 
 # Center the Predict button
-st.markdown("""
+st.markdown(""" 
 <style>
 div.stButton > button:first-child {
     display: block;
