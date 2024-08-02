@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model # type: ignore
 import numpy as np
 import json
 
@@ -16,9 +16,9 @@ scaler = joblib.load('./scaler.pkl')
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
-    input_data = np.array(data['input']).reshape(1, -1)
+    input_data = np.array(data['input']).reshape(1, -1) # type: ignore
     scaled_data = scaler.transform(input_data)
-    scaled_data = scaled_data.reshape((1, len(data['input']), 1))
+    scaled_data = scaled_data.reshape((1, len(data['input']), 1)) # type: ignore
     
     prediction = model.predict(scaled_data)
     prediction = scaler.inverse_transform(prediction)
