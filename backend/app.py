@@ -11,7 +11,7 @@ model = load_model('../notebooks/models/stock_price_prediction.h5')
 # Load the scaler (assuming you saved it using joblib)
 from sklearn.preprocessing import MinMaxScaler
 import joblib
-scaler = joblib.load('./scaler.pkl')
+scaler = joblib.load('../notebooks/models/scaler.pkl')
 
 @app.route('/predict', methods=['POST'])
 def predict():
